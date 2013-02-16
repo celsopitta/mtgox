@@ -13,7 +13,7 @@ module MtGox
       options = {
         headers:  {
           accept: 'application/json',
-          user_agent: "mtgox gem #{MtGox::Version}",
+          user_agent: "btcjam #{MtGox::Version}",
         },
         url: 'https://mtgox.com',
       }

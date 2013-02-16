@@ -34,8 +34,8 @@ module MtGox
     # @return [MtGox::Ticker]
     # @example
     #   MtGox.ticker
-    def ticker
-      ticker = get('/api/0/data/ticker.php')['ticker']
+    def ticker(currency_code="USD")
+      ticker = get("/api/0/data/ticker.php?Currency=#{currency_code}")['ticker']
       Ticker.instance.buy    = ticker['buy'].to_f
       Ticker.instance.high   = ticker['high'].to_f
       Ticker.instance.price  = ticker['last'].to_f
